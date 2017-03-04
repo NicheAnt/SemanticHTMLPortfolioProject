@@ -1,110 +1,612 @@
-/*
-* wiping everything to get a blank slate
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
 */
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-/*
-* general style
-*/
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
-  background: #F5F5F5;
-  color: #040404;
-  font-family: "Helvetica Neue", Arial, serif;
-  font-size: 22px;
-  margin: 0;
-  padding: 0;
-  font-weight: 200;
+	line-height: 1;
 }
-h1, h2, h3, h4 {
-  margin: 10px 0 15px;
+ol, ul {
+	list-style: none;
 }
-p, ul {
-  margin: 10px 0;
+blockquote, q {
+	quotes: none;
 }
-ul li {
-  margin-left: 30px;
-  line-height: 1.4;
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
 }
-/*
-* link behaviour
-*/
-a{
-  color: inherit;
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
-a:hover {
-  color: orange;
+
+/* custom css starts here... */
+@font-face {
+	font-family: hind;
+	src: url(font/Hind-SemiBold.ttf);
 }
-a:active {
-  position: relative;
-  top: 1px;
-}
-/*
-* page content
-*/
-.content-wrapper {
-  line-height: 1.4;
-  margin: 0 auto;
-  max-width: 900px;
-  padding: 30px 25px;
-}
-/*
-* highlighting skills-section
-*/
-.skills {
-  background-color: orange;
-  color: white;
-}
-/*
-* page header
-*/
 header {
-  align-items: center;
-  border-top: 4px solid orange;
-  text-align: center;
-  padding: 100px;
-  background-color: #EFEFEF;
-  background-image: url(images/tomtoes.jpg);
-  background-position: center;
-  background-repeat: repeat-x;
-  color: white;
+	height: 11.16vh;
+	border-bottom: 0.75vh solid #b35129;
 }
-header h1{
-  font-size: 34px;
+body {
+  background-color: #dee1d0;
 }
-header h2{
-  font-size: 28px;
+.logo {
+  display: inline-block;
 }
-/*
-* navigation
-*/
+.logo img{
+	height: 9vh;
+  padding: 1vh 3vh;
+}
 nav {
+  display: inline-block;
+  position: relative;
+  bottom: 4.5vh;
+  left: 18vw;
+}
+nav ul li {
   display: inline;
-  list-style: none;
-  margin: 1em 0;
-  padding: 0;
+  padding: 0 3vh;
+  border-right: 0.3vh solid white;
 }
-nav li {
-  display: inline;
-  margin-right: 1em;
+nav ul li:last-child {
+  border-right: 0;
 }
-/*
-* footer
-*/
-footer {
-  margin-top: 2em;
-  background-color: #444;
-  color: #eee;
+nav ul li a {
+  text-decoration: none;
+  font-family: "hind";
+	letter-spacing: 0.2vw;
+	font-size: 1.15vw;
+	padding-top: 0.5vh;
+  color: white;
+	transition: padding 0.5s;
 }
-footer h3{
-  font-size: 16px;
+nav ul li a:focus, nav ul li a:hover {
+	padding-bottom: 0.5vh;
+	border-bottom: 0.3vh solid white;
+	color: white;
 }
-footer p{
-  font-size: 12px;
+.contact img {
+  display: inline-block;;
+  position: absolute;
+	height: 4vh;
+  right: 4vw;
+	top: 3.5vh;
 }
-/*
-*code for pushing changes on to github-pages
-*git subtree push --prefix src origin gh-pages
-*/
+
+.panel { /*panel size and content*/
+  width: 80vw;
+  height: 86.84vh;
+  margin: 2vh auto 0 auto;
+  background: #0b4f6c url("images/panel_blue.jpg") no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  overflow: hidden;
+}
+.panel-tab { /*position of tab coloumn*/
+  list-style-type: none;
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
+.panel-tab li { /*tab content and background*/
+  font-size: 2.5vmin;
+  padding: 3vmin 3.5vmin;
+  border-bottom: 1vmin solid #074b68;/*blue 0b4f6c/074b68 separators*/
+  background-color: rgba(0, 0, 0, 0.2);/*all unactivated tabs have a faint black background*/
+}
+.panel-tab li:first-child, .panel-tab li:nth-child(6) {
+  border-bottom: 0; /*removing blue gaps for top and bottom*/
+}
+.panel-tab li:first-child {
+  padding-top: 14vmin; /*stretching background black to top*/
+	background-color: rgba(0, 0, 0, 0.35);
+}
+.panel-tab li:last-child {
+  padding-bottom: 20vmin; /*stretching background black to bottom*/
+	background-color: rgba(0, 0, 0, 0.35);
+}
+
+/*behaviour of anchor tabs*/
+.panel-tab li a {
+  text-decoration: none;
+  font-size: 4vmin;
+  color: #dee1d0;
+	padding: 3vmin; /*increasing clickable area*/
+	margin: -3vmin; /*keeping original flow*/
+}
+.link:hover { /*removing black background on hover*/
+  background-color: rgba(0, 0, 0, 0);
+}
+.panel-tab>.activated { /*removing black background on activation*/
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/*Image grid*/
+.image-grid {
+	height: 87.5vh;
+	padding-top: 0.5vh;
+	overflow: hidden; /*bottom of images get a bit cut*/
+	background-color: white;
+}
+/*Illustration page*/
+.col1, .col2, .col3 {
+	float: left;
+	margin-right: 0.5vw;
+}
+
+.nineties {
+	height: 15.8vw;/*got value with trial and error*/
+	width: 13vw;
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 0.4vw;
+}
+.nineties img {
+	height: auto;
+	width: 100%;
+}
+.nineties_visible {
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	transition: top 0.25s ease-in 0.1s;
+}
+.nineties:hover .nineties_visible {
+	top: 15.8vw;
+}
+.nineties_hidden {
+	background-color: #1a1619;
+	height: 15.8vw;
+	width: 13vw;
+	position: absolute;
+	top: 0;
+	z-index: 0;
+}
+.nineties_hidden a, .wiw_hidden a, .spices_hidden a, .bww_hidden a, .frog_hidden a, .stones_hidden a, .journals_hidden a, .birds_hidden a, .ip_hidden a, .ec_hidden a, .walls_hidden a  {
+	text-decoration: none;
+	text-align: left;
+}
+.nineties_hidden a h1 {
+	padding: 4vw 2vw 0 2vw;
+	color: orange;
+	font-family: "hind";
+	font-size: 1.5vw;
+}
+.nineties_hidden a p {
+	color: white;
+	padding: 1vw 2vw 2vw 2vw;
+	font-family: "hind";
+}
+
+.wiw {
+	height: 29.4vw;/*got value with trial and error*/
+	width: 13vw;
+	position: relative;
+	overflow: hidden;
+}
+.wiw img {
+	height: auto;
+	width: 100%;
+}
+.wiw_visible {
+	bottom: -0.2vw;
+	position: absolute;
+	z-index: 1;
+	transition: bottom 0.25s ease-in 0.1s;
+}
+.wiw:hover .wiw_visible {
+	bottom: 29.4vw;
+}
+.wiw_hidden {
+	background-color: #c0e6f0;
+	height: 29.4vw;
+	width: 13vw;
+	position: absolute;
+	top: 0;
+	z-index: 0;
+}
+.wiw_hidden a h1 {
+	padding: 4vw 2vw 0 2vw;
+	color: #5f3e2b;
+	font-family: "hind";
+	font-size: 1.5vw;
+}
+.wiw_hidden a p {
+	color: #1a1619;
+	font-family: "hind";
+	padding: 1vw 2vw 2vw 2vw;
+}
+
+.spices {
+	height: 45.5vw;/*got value with trial and error*/
+	width: 21vw;
+	position: relative;
+	overflow: hidden;
+}
+.spices img {
+	height: auto;
+	width: 21vw;
+}
+.spices_visible {
+	left: 0;
+	position: absolute;
+	z-index: 1;
+	transition: left 0.25s ease-in 0.1s;
+}
+.spices:hover .spices_visible {
+	left: 21vw;
+}
+.spices_hidden {
+	background-color: #f1ab1f;
+	height: 45.5vw;
+	width: 21vw;
+	position: absolute;
+	top: 0;
+	z-index: 0;
+}
+.spices_hidden a h1 {
+	padding: 4vw 2vw 0 2vw;
+	color: #5f3e2b;
+	font-family: "hind";
+	font-size: 1.5vw;
+}
+.spices_hidden a p {
+	color: #1a1619;
+	font-family: "hind";
+	padding: 1vw 2vw 2vw 2vw;
+}
+
+.bww {
+	height: 15.8vw;/*got value with trial and error*/
+	width: 31vw;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 0.4vw;
+}
+.bww img {
+	height: 15.8vw;
+	width: 31vw;
+	margin-bottom: 0.2vw;
+}
+.bww_visible {
+	top: 0;
+	position: absolute;
+	z-index: 1;
+	transition: top 0.25s ease-in 0.1s;
+}
+.bww:hover .bww_visible {
+	top: 15.8vw;
+}
+.bww_hidden {
+	background-color: #060809;
+	height: 15.8vw;
+	width: 31.4vw;
+	position: absolute;
+	top: 0;
+	z-index: 0;
+}
+.bww_hidden a h1 {
+	padding: 4vw 2vw 0 2vw;
+	color: #c0e6f0;
+	font-family: "hind";
+	font-size: 1.5vw;
+}
+.bww_hidden a p {
+	color: #c0e6f0;
+	font-family: "hind";
+	padding: 1vw 2vw 2vw 2vw;
+}
+
+.frog {
+	height: 14.5vw;/*got value with trial and error*/
+	width: 31vw;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 0.4vw;
+}
+.frog img {
+	height: auto;
+	width: 31vw;
+	margin-bottom: 0.2vw;
+}
+.frog_visible {
+	bottom: -0.4vw;
+	position: absolute;
+	z-index: 1;
+	transition: bottom 0.25s ease-in 0.1s;
+}
+.frog:hover .frog_visible {
+	bottom: 14.5vw;
+}
+.frog_hidden {
+	background-color: #3e976a;
+	height: 14.5vw;
+	width: 31vw;
+	position: absolute;
+	top: 0;
+	z-index: 0;
+}
+.frog_hidden a h1 {
+	padding: 4vw 2vw 0 2vw;
+	color: #c0e6f0;
+	font-family: "hind";
+	font-size: 1.5vw;
+}
+.frog_hidden a p {
+	color: #c0e6f0;
+	font-family: "hind";
+	padding: 1vw 2vw 2vw 2vw;
+}
+
+.stones {
+	height: 14.5vw;/*got value with trial and error*/
+	width: 15.1vw;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	margin-right: 0.5vw;
+}
+.stones img {
+	height: auto;
+	width: 15.1vw;
+}
+.stones_visible {
+	right: 0;
+	position: absolute;
+	z-index: 1;
+	transition: right 0.25s ease-in 0.1s;
+}
+.stones:hover .stones_visible {
+	right: 15.1vw;
+}
+.stones_hidden {
+	background-color: #435da7;
+	height: 14.5vw;
+	width: 15.1vw;
+	position: absolute;
+	top: 0;
+	z-index: 0;
+}
+.stones_hidden a h1 {
+	padding: 4vw 2vw 0 2vw;
+	color: #060809;
+	font-family: "hind";
+	font-size: 1.5vw;
+}
+.stones_hidden a p {
+	color: #060809;
+	font-family: "hind";
+	padding: 1vw 2vw 2vw 2vw;
+}
+.journals {
+	height: 14.5vw;
+	width: 15.4vw;
+	position: relative;
+	overflow: hidden;
+}
+.journals img {
+	height: 14.5vw;/*.1vw stretch to match borders*/
+	width: 15.4vw;
+}
+.journals_visible {
+	left: 0;
+	position: absolute;
+	z-index: 1;
+	transition: left 0.25s ease-in 0.1s;
+}
+.journals:hover .journals_visible {
+	left: 15.4vw;
+}
+.journals_hidden {
+	background-color: #67715a;
+	height: 14.5vw;
+	width: 15.4vw;
+	position: absolute;
+	top: 0;
+	z-index: 0;
+}
+.journals_hidden a h1 {
+	padding: 4vw 2vw 0 2vw;
+	color: #18203c;
+	font-family: "hind";
+	font-size: 1.5vw;
+}
+.journals_hidden a p {
+	color: #18203c;
+	font-family: "hind";
+	padding: 1vw 2vw 2vw 2vw;
+}
+
+.subcol41 {
+	float: left;
+	margin: 0 0.5vw 0.4vw 0;
+}
+.birds {
+	height: 30.7vw;
+	width: 20vw;
+	position: relative;
+	overflow: hidden;
+}
+.birds img {
+	height: auto;
+	width: 20vw;
+}
+.birds_visible {
+	top: 0.05vw;/*0.05vw shift to match*/
+	right: 0;
+	position: absolute;
+	z-index: 1;
+	transition: right 0.25s ease-in 0.1s;
+}
+.birds:hover .birds_visible {
+	right: 20vw;
+}
+.birds_hidden {
+	background-color: #5f3e2b;
+	height: 31vw;
+	width: 20vw;
+	position: absolute;
+	top: 0;
+	z-index: 0;
+}
+.birds_hidden a h1 {
+	padding: 4vw 2vw 0 2vw;
+	color: #c0e6f0;
+	font-family: "hind";
+	font-size: 1.5vw;
+}
+.birds_hidden a p {
+	color: #c0e6f0;
+	font-family: "hind";
+	padding: 1vw 2vw 2vw 2vw;
+}
+/*subcol42*/
+.subcol42 {
+	margin-bottom: 0;
+}
+.ip {
+	height: 19vw;
+	width: 13vw;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 0.4vw;
+}
+.ip img {
+	height: auto;
+	width: 13vw;
+}
+.ip_visible {
+	top: 0;
+	position: absolute;
+	z-index: 1;
+	transition: top 0.25s ease-in 0.1s;
+}
+.ip:hover .ip_visible {
+	top: 19vw;
+}
+.ip_hidden {
+	background-color: #c0a99d;
+	height: 19vw;
+	width: 13vw;
+	position: absolute;
+	top: 0;
+	z-index: 0;
+}
+.ip_hidden a h1 {
+	padding: 4vw 2vw 0 2vw;
+	color: #18203c;
+	font-family: "hind";
+	font-size: 1.5vw;
+}
+.ip_hidden a p {
+	color: #18203c;
+	font-family: "hind";
+	padding: 1vw 2vw 2vw 2vw;
+}
+.ec {
+	height: 11.3vw;
+	width: 13vw;
+	position: relative;
+	overflow: hidden;
+}
+.ec img {
+	height: auto;
+	width: 13vw;
+}
+.ec_visible {
+	bottom: -0.1vw;/*shift to match*/
+	position: absolute;
+	z-index: 1;
+	transition: bottom 0.25s ease-in 0.1s;
+}
+.ec:hover .ec_visible {
+	bottom: 11.3vw;
+}
+.ec_hidden {
+	background-color: #f2c778;
+	height: 11.3vw;
+	width: 13vw;
+	position: absolute;
+	top: 0;
+	z-index: 0;
+}
+.ec_hidden a h1 {
+	padding: 4vw 2vw 0 2vw;
+	color: #18203c;
+	font-family: "hind";
+	font-size: 1.5vw;
+}
+.ec_hidden a p {
+	color: #18203c;
+	font-family: "hind";
+	padding: 1vw 2vw 2vw 2vw;
+}
+
+
+.walls {
+	height: 14.5vw;
+	width: 33.5vw;
+	position: relative;
+	overflow: hidden;
+}
+.walls img {
+	height: 14.5vw;
+	width: 33.5vw;
+}
+.walls_visible {
+	right: 0vw;/*shift to match*/
+	position: absolute;
+	z-index: 1;
+	transition: right 0.25s ease-in 0.1s;
+}
+.walls:hover .walls_visible {
+	right: 33.5vw;
+}
+.walls_hidden {
+	background-color: #18203c;
+	height: 14.5vw;
+	width: 33.5vw;
+	position: absolute;
+	top: 0;
+	z-index: 0;
+}
+.walls_hidden a h1 {
+	padding: 4vw 2vw 0 2vw;
+	color: #c0e6f0;
+	font-family: "hind";
+	font-size: 1.5vw;
+}
+.walls_hidden a p {
+	color: #c0e6f0;
+	font-family: "hind";
+	padding: 1vw 2vw 2vw 2vw;
+}

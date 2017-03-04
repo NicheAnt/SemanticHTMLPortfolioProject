@@ -1,70 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
-  <link rel="stylesheet" href="main.css">
-  <title>HTML Portfolio</title>
-</head>
-<body>
 
-  <header>
-    <h1>Nishant Seth</h1>
-    <h2>Tinkerer</h2>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="more.html">More</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <title>Landing Page</title>
+    <link href="main.css" rel="stylesheet">
+  </head>
 
-  <main>
+  <body>
 
-    <section class="tagline">
-      <div class="content-wrapper">
-        <h3>About</h3>
-        <p>Nishant enjoys tinkering with technology. Web
-          technologies are new to him, but he's already
-          loving it. He also enjoys spending time in nature
-          and is always looking to conspire with other creatures.</p>
-      </div>
-    </section>
+      <!-- logo and navigation bar -->
+      <header>
+        <!-- logo -->
+        <a href="/" class="logo">
+          <img src='images/logo_maroonred.jpg' alt='logo'></img>
+        </a>
+        <!-- navigation bar-->
+        <nav>
+          <ul>
+            <li><a href='Illustration.html'>Illustration</a></li>
+            <li><a href='index.html'>Print</a></li>
+            <li><a href='index.html'>Community</a></li>
+            <li><a href='index.html'>Education</a></li>
+          </ul>
+        </nav>
+        <!-- navigation bar rightmost element -->
+        <a href='index.html' class='contact'>
+          <img src='images/contact_icon_maroonred.jpg' alt='contact'></img>
+        </a>
+      </header>
 
-    <section class="skills">
-      <div class="content-wrapper">
-        <h3>Skills</h3>
-        <p>These are some of the technologies he is
-            currently tinkering with...<p>
-        <ul>
-            <li>audio interfaces</li>
-            <li>pedal generators</li>
-            <li>QGIS</li>
-            <li>HTML</li>
+      <!-- tabbed images -->
+      <section class='panel'>
+        <!--panel tabs-->
+        <ul class='panel-tab'>
+          <li></li> <!--empty li to strech background to top-->
+          <li class='link activated'><a href="#">&bull;</a></li>
+          <li class='link'><a href="#">&bull;</a></li>
+          <li class='link'><a href="#">&bull;</a></li>
+          <li class='link'><a href="#">&bull;</a></li>
+          <li class='link'><a href="#">&bull;</a></li>
+          <li></li> <!--empty li to strech background to bottom-->
         </ul>
-      </div>
-    </section>
+      </section>
 
-    <section class="contact">
-      <div class="content-wrapper">
-        <h3>Contact</h3>
-        <p>Thanks for visiting! To get in touch, write to:
-          nishant.sth at gmail dot com. For information on
-          earlier work with audio interfaces, visit the <a href="https://sites.google.com/a/regularities.org/nish/home">
-            regularities website</a> (not really, it's terrible).</p>
-      </div>
-    </section>
+    <!-- jquery-3 -->
+    <script src="../jquery-3.1.1.min.js"></script>
+    <!-- custom js -->
+    <script src="application.js"></script>
 
-  </main>
-
-  <footer>
-    <div class="content-wrapper">
-      <h3>Credits</h3>
-      <p>This portfolio was created using Code School's
-        <a href='https://github.com/codeschool/SemanticHTMLPortfolioProject'>
-        Semantic HTML Portfolio Project</a> template.</p>
-    </div>
-  </footer>
-
-</body>
+  </body>
 </html>
